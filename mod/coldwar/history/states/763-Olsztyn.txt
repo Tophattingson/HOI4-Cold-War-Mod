@@ -1,0 +1,24 @@
+state={
+	id=763
+	name="STATE_763"
+	state_category = rural
+	history={
+		owner = POL
+		controller = POL
+		
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			6332 = {
+				bunker = 1
+
+			}
+		}
+		add_core_of = POL
+	}
+	provinces={
+		266 9327 6402 11245 9398 3380 3351 9346 6375 9372 11386
+	}
+	manpower=0
+	buildings_max_level_factor=1.000
+}
