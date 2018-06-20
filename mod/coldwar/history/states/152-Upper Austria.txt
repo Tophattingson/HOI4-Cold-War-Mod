@@ -12,7 +12,7 @@ state={
 	}
 
 	history={
-		owner = AUS
+		owner = AUA
 		buildings = {
 			infrastructure = 6
 			industrial_complex = 3
@@ -21,12 +21,6 @@ state={
 			688 10 
 		}
 		add_core_of = AUS
-
-		1938.3.12 = {
-			owner = GER
-			controller = GER
-			add_core_of = GER
-		}
 	}
 
 	provinces={

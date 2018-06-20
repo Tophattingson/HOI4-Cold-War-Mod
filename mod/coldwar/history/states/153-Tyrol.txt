@@ -7,7 +7,7 @@ state={
 	state_category = town
 
 	history={
-		owner = AUS
+		owner = AUF
 		victory_points = {
 			673 5 
 		}
@@ -17,12 +17,6 @@ state={
 			air_base = 3
 		}
 		add_core_of = AUS
-
-		1938.3.12 = {
-			owner = GER
-			controller = GER
-			add_core_of = GER
-		}
 	}
 
 	provinces={
