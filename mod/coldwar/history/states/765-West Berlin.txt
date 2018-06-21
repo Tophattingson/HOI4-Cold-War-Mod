@@ -1,0 +1,18 @@
+state={
+	id=765
+	name="STATE_765"
+	provinces={
+		6521 
+	}
+	manpower=0
+	state_category = metropolis
+	
+	history={
+		owner = GER
+		victory_points = {
+			6521 25
+		}
+		add_core_of = GER
+	}
+	buildings_max_level_factor=1.000
+}
