@@ -1,0 +1,53 @@
+﻿add_namespace = britain_winter
+
+#Start of the British Winter
+news_event = {
+	id = britain_winter.0
+	title = britain_winter.0.t
+	desc = britain_winter.0.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect{
+			ENG = {
+				country_event = {
+					id = britain_winter.1
+					days = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = britain_winter.0.a
+		add_timed_idea = {
+			idea = british_winter_47
+			days = 90
+		}
+	}
+}
+
+#Scapegoat the Minister
+country_event = {
+	id = britain_winter.1
+	title = britain_winter.1.t
+	desc = britain_winter.1.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Scapegoat
+		name = britain_winter.1.a
+			add_political_power = -100
+		}
+	option = { #Accept responsibility
+		name = britain_winter.1.b
+		hidden_effect = {
+			set_country_flag = ENG_no_scapegoat
+		}
+	}
+}
