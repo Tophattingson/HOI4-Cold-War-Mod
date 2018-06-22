@@ -1,0 +1,24 @@
+ideas = {
+	country = {
+		british_winter_47 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = great_depression
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.3
+				production_speed_buildings_factor = -0.3
+				min_export = -0.1
+				stability_factor = -0.05
+			}
+		}
+	}
+}
+			
