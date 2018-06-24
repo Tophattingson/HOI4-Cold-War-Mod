@@ -73,6 +73,18 @@ if = {
 		puppet = BLR
 	}
 }
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = AZR
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = AZR
+	}
+}
 
 1939.1.1 = {
 
