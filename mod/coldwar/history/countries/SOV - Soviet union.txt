@@ -49,6 +49,30 @@ if = {
 		puppet = AUE
 	}
 }
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = UKR
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = UKR
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = BLR
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = BLR
+	}
+}
 
 1939.1.1 = {
 
@@ -242,6 +266,9 @@ create_faction = Comintern
 add_to_faction = SOV
 add_to_faction = MON
 add_to_faction = TAN
+add_to_faction = AUE
+add_to_faction = UKR
+add_to_faction = BLR
 
 
 add_ideas = {
