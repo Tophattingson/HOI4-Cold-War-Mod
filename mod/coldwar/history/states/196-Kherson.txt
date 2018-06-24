@@ -1,22 +1,26 @@
+
 state={
-	id=89
-	name="STATE_89" # Stanislawow
-	manpower = 2180300
+	id=196
+	name="STATE_196"
+	manpower = 728363
 	
-	state_category = town
+	state_category = rural
 	
+	resources={
+		chromium=15 # was: 22
+	}
+
 	history={
 		owner = UKR
 		buildings = {
 			infrastructure = 5
 			air_base = 3
-
 		}
 		add_core_of = SOV
 		add_core_of = UKR
 	}
 
 	provinces={
-		3434 3743 6431 6460 6483 9425 11411 11550 
+		568 721 737 767 3573 6771 9712 11715 
 	}
 }
