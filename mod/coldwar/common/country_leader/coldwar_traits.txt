@@ -1,0 +1,64 @@
+leader_traits = {
+	#leader traits added to represent countries that were neither solidly democratic or communist but had leanings towards a particular side in the cold war
+	
+	slight_democratic_lean = {
+		random = yes
+		democratic_acceptance = 10
+		communism_acceptance = -10
+		communism_drift = -0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	democratic_lean = {
+		random = yes
+		democratic_acceptance = 20
+		communism_acceptance = -20
+		communism_drift = -0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	strong_democratic_lean = {
+		random = yes
+		democratic_acceptance = 50
+		communism_acceptance = -50
+		communism_drift = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	slight_communism_lean = {
+		random = yes
+		democratic_acceptance = -10
+		communism_acceptance = 10
+		democratic_drift = -0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	communism_lean = {
+		random = yes
+		democratic_acceptance = -20
+		communism_acceptance = 20
+		democratic_drift = -0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	strong_communism_lean = {
+		random = yes
+		democratic_acceptance = -50
+		communism_acceptance = 50
+		democratic_drift = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
