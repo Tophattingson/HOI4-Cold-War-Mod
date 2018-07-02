@@ -549,3 +549,7 @@ AUK = {
 	color = rgb { 201 56 93 }
 	color_ui = rgb { 255 73 121 }
 }
+SUD = {
+	color = rgb { 57 117 53 }
+	color_ui = rgb { 77 155 72 }
+}
