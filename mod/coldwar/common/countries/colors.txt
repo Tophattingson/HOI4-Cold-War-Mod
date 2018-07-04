@@ -553,3 +553,19 @@ SUD = {
 	color = rgb { 57 117 53 }
 	color_ui = rgb { 77 155 72 }
 }
+GEA = {
+	color = rgb { 20 133 237 }
+	color_ui = rgb { 87 160 255 }
+}
+GEE = {
+	color = rgb { 125 13 24 }
+	color_ui = rgb { 163 17 31 }
+}
+GEF = {
+	color = rgb { 57 113 228 }
+	color_ui = rgb { 74 147 255 }
+}
+GEK = {
+	color = rgb { 201 56 93 }
+	color_ui = rgb { 255 73 121 }
+}
