@@ -3,3 +3,8 @@ AUE = "countries/Soviet Austria.txt"
 AUF = "countries/French Austria.txt"
 AUK = "countries/British Austria.txt"
 SUD = "countries/Sudan.txt"
+GEA = "countries/American Germany.txt"
+GEE = "countries/Soviet Germany.txt"
+GEF = "countries/French Germany.txt"
+GEK = "countries/British Germany.txt"
+
