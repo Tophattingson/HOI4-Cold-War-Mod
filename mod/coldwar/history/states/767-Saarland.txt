@@ -1,0 +1,23 @@
+
+state={
+	id=767
+	name="STATE_767"
+	manpower = 0
+	resources={
+	}
+	
+	state_category = city
+
+	history={
+		owner = GER
+		buildings = {
+		}
+		add_core_of = GER
+	}
+
+	provinces={
+		9575 11531
+	}
+	
+	
+}
