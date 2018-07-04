@@ -90,6 +90,19 @@ if = {
 	}
 }
 
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = GEF
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = GEF
+	}
+}
+
 #Order matters here Daladier will start as leaders because added last
 create_country_leader = {
 	name = "Charles de Gaulle"

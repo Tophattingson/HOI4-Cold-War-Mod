@@ -111,6 +111,19 @@ if = {
 		has_dlc = "Together for Victory"
 	}
 	set_autonomy = {
+		target = GEK
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = GEK
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
 		target = EGY
 		autonomous_state = autonomy_colony
 	}
