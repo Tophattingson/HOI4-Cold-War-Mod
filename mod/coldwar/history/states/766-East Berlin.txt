@@ -4,15 +4,19 @@ state={
 	provinces={
 		11505 
 	}
-	manpower=0
-	state_category = metropolis
+	manpower=1200000
+	state_category = city
 	
 	history={
 		victory_points = {
 			11505 25
 		}
-		owner = GER
+		owner = GEE
 		add_core_of = GER
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+		}
 	}
 	buildings_max_level_factor=1.000
 }

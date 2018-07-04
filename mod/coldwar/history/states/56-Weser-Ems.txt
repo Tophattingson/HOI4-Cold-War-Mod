@@ -1,0 +1,30 @@
+state={
+	id=56
+	name="STATE_56"
+	manpower = 3100000
+	
+	state_category = city
+
+	history={
+		owner = GEK
+		victory_points = {
+			241 5 
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+			dockyard = 1
+			241 = {
+				naval_base = 8
+
+			}
+			air_base = 3
+
+		}
+		add_core_of = GER
+	}
+
+	provinces={
+		241 247 309 336 3234 9281 11233 11264 11360 11388 
+	}
+}

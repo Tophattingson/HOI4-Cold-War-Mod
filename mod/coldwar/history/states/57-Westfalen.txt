@@ -1,0 +1,25 @@
+
+state={
+	id=57
+	name="STATE_57"
+	manpower = 5300000
+	state_category = large_city
+
+	history={
+		owner = GEK
+		victory_points = {
+			495 5 
+		}
+		buildings = {
+			infrastructure = 8
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 3
+		}
+		add_core_of = GER
+	}
+
+	provinces={
+		405 495 3355 3398 6535 6622 9443 9509 11346 11431 
+	}
+}

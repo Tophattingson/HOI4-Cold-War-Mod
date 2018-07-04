@@ -2,7 +2,7 @@
 state={
 	id=42
 	name="STATE_42"
-	manpower = 3027739
+	manpower = 2700000
 	resources={
 		steel=59 # was: 100
 		aluminium=14 # was: 24
@@ -11,27 +11,15 @@ state={
 	state_category = metropolis
 
 	history={
-		owner = GER
+		owner = GEF
 		victory_points = { 11435 10 }
 		buildings = {
 			infrastructure = 7
-			industrial_complex = 3
+			industrial_complex = 1
+			arms_factory = 1
 
 		}
 		add_core_of = GER
-	
-		set_demilitarized_zone = yes
-		
-		1936.3.7 = {
-			set_demilitarized_zone = no
-		}
-
-		1939.1.1 ={
-			buildings = {
-				radar_station = 1
-				synthetic_refinery = 3
-			}
-		}
 	}
 
 	provinces={
