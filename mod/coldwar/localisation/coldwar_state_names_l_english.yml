@@ -1,8 +1,10 @@
 ﻿l_english:
  STATE_50:0 "Baden"
+ STATE_273:0 "Fezzan"
  STATE_763:0 "Olsztyn"
  STATE_764:0 "Carinthia"
  STATE_765:0 "West Berlin"
  STATE_766:0 "East Berlin"
  STATE_767:0 "Saarland"
  STATE_768:0 "Württemberg"
+ STATE_769:0 "Cyrenaican Desert"
