@@ -1,0 +1,189 @@
+﻿add_namespace = coldwar_egypt
+
+#egyptian revolution of 1952
+news_event = {
+	id = coldwar_egypt.0
+	title = coldwar_egypt.0.t
+	desc = coldwar_egypt.0.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = EGY
+		is_puppet_of = ENG
+		date > 1951.1.1
+		has_government = neutrality
+	}
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			country_exists = ISR
+		}
+		modifier = {
+			factor = 0.5
+			communism > 0.2
+		}
+		modifier = {
+			factor = 2
+			democracy > 0.3
+		}
+		modifier = {
+			factor = 1.5
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 1.5
+			has_stability > 0.8
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = coldwar_egypt.1
+					days = 7
+				}
+			}
+		}
+	}
+	option = {
+		name = coldwar_egypt.0.a
+		set_cosmetic_tag = EGY_republic
+		ENG = {
+			end_puppet = EGY
+		}
+		leave_faction = yes
+		create_country_leader = {
+			name = "Gamal Abdel Nasser"
+			picture = "gfx/leaders/SAU/Portrait_Arabia_Generic_land_1.dds"
+			ideology = despotism
+			traits = {
+				communism_lean
+			}
+		}
+		add_stability = -0.1
+	}
+}
+
+#UK responds to revolution
+country_event = {
+	id = coldwar_egypt.1
+	title = coldwar_egypt.1.t
+	desc = coldwar_egypt.1.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Do nothing
+		name = coldwar_egypt.1.a
+		ai_chance = { factor = 75 }
+	}
+	option = { #Demand suez
+		name = coldwar_egypt.1.b
+		ai_chance = { factor = 20 }
+		add_political_power = -100
+		hidden_effect = {
+			EGY = {
+				country_event = {
+					id = coldwar_egypt.2
+					days = 7
+				}
+			}
+		}
+	}
+	option = { #Prepare for war
+		name = coldwar_egypt.1.c
+		ai_chance = { factor = 5 }
+		add_political_power = -200
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = EGY
+		}
+		hidden_effect = {
+			EGY = {
+				country_event = {
+					id = coldwar_egypt.5
+				}
+			}
+		}
+	}
+}
+
+#Egypt responds to Suez ultimatum
+country_event = {
+	id = coldwar_egypt.2
+	title = coldwar_egypt.2.t
+	desc = coldwar_egypt.2.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Return suez
+		name = coldwar_egypt.2.a
+		ENG = {
+			set_state_owner = 770
+		}
+		add_stability = -0.1
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = coldwar_egypt.3
+				}
+			}
+		}
+	}
+	option = { #Reject ultimatum
+		name = coldwar_egypt.2.b
+		hidden_effect = {
+			ENG = {
+				country_event = {
+					id = coldwar_egypt.4
+				}
+			}
+		}
+		add_war_support = 0.1
+	}
+}
+
+#Egypt hands control of Suez
+news_event = {
+	id = coldwar_egypt.3
+	title = coldwar_egypt.3.t
+	desc = coldwar_egypt.3.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Gunboat diplomacy
+		name = coldwar_egypt.3.a
+	}
+}
+
+#Egypt rejects ultimatum
+news_event = {
+	id = coldwar_egypt.4
+	title = coldwar_egypt.4.t
+	desc = coldwar_egypt.3.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Prepare for war
+		name = coldwar_egypt.4.a
+		create_wargoal = {
+			type = take_state_focus
+			target = EGY
+			generator = { 770 }
+		}
+	}
+}
+
+#Britain prepares for intervention
+news_event = {
+	id = coldwar_egypt.5
+	title = coldwar_egypt.5.t
+	desc = coldwar_egypt.5.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Prepare to defend
+		name = coldwar_egypt.5.a
+		add_war_support = 0.1
+	}
+}
