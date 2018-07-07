@@ -25,7 +25,7 @@ news_event = {
 		}
 		modifier = {
 			factor = 2
-			democracy > 0.3
+			democratic > 0.3
 		}
 		modifier = {
 			factor = 1.5
