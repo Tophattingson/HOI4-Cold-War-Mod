@@ -1,0 +1,21 @@
+ideas = {
+	country = {
+		salami_tactics = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_communism_drift_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.05
+			}
+		}
+	}
+}
+			
