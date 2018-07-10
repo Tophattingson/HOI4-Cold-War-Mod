@@ -1,1 +1,362 @@
+focus_tree = {
+	id = soviet_focus
 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SOV
+		}
+	}
+	default = no
+	
+	focus = {
+		id = western_european_influence
+		icon = GFX_focus_generic_soviet_politics
+		x = 4
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = german_rearmament
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = western_european_influence }
+		mutually_exclusive = { focus = further_german_reparations }
+		cost = 10
+		available = {
+			GEE = {
+				is_puppet_of = SOV
+			}
+		}
+		x = -4
+		y = 1
+		relative_position_id = western_european_influence
+		cost = 10
+		complete_tooltip = {
+			GEE = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+		}
+		completion_reward = {
+			GEE = {
+				news_event = {
+					id = coldwar_soviet.0
+				}
+			}
+		}
+	}
+	focus = { #INCOMPELTE
+		id = further_german_reparations
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = western_european_influence }
+		mutually_exclusive = { focus = german_rearmament }
+		cost = 10
+		available = {
+			GEE = {
+				is_puppet_of = SOV
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = western_european_influence
+	}
+	focus = { #INCOMPLETE
+		id = operation_osoaviakhim
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = {
+			focus = further_german_reparations
+			focus = german_rearmament
+		}
+		cost = 10
+		available = {
+			OR = {
+				GEE = {
+					is_puppet_of = SOV
+				}
+				DDR = {
+					OR = {
+						is_puppet_of = SOV
+						is_in_faction_with = SOV
+					}
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = german_rearmament
+	}
+	focus = { #INCOMPLETE
+		id = establish_east_germany
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = {
+			focus = further_german_reparations
+			focus = german_rearmament
+		}
+		cost = 10
+		available = {
+			GEE = {
+				is_puppet_of = SOV
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = further_german_reparations
+	}
+	focus = { #INCOMPLETE
+		id = blockade_berlin
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = establish_east_germany }
+		cost = 10
+		available = {
+			WGR = {
+				owns_state = 765
+			}
+			DDR = {
+				OR = {
+					is_puppet_of = SOV
+					is_in_faction_with = SOV
+				}
+				owns_state = 64
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = establish_east_germany
+	}
+	focus = { #INCOMPLETE
+		id = anti_fascist_pressure
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		prerequisite = { focus = establish_east_germany }
+		cost = 10
+		available = {
+			WGR = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = establish_east_germany
+	}
+	focus = { #INCOMPLETE
+		id = the_german_autumn
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { 
+			focus = anti_fascist_pressure
+			focus = blockade_berlin
+		}
+		cost = 10
+		available = {
+			WGR = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = anti_fascist_pressure
+	}
+	focus = { #INCOMPLETE
+		id = split_austria
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = establish_east_germany }
+		mutually_exclusive = { focus = unified_neutral_austria }
+		cost = 10
+		available = {
+			AUE = {
+				is_puppet_of = SOV
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = establish_east_germany
+	}
+	focus = { #INCOMPLETE
+		id = unified_neutral_austria
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = establish_east_germany }
+		mutually_exclusive = { focus = split_austria }
+		cost = 10
+		available = {
+			AUE = {
+				is_puppet_of = SOV
+			}
+			AUA = {
+				is_puppet_of = USA
+			}
+			AUF = {
+				is_puppet_of = FRA
+			}
+			AUK = {
+				is_puppet_of = ENG
+			}
+		}
+		x = 4
+		y = 1
+		relative_position_id = establish_east_germany
+	}
+	focus = { #INCOMPLETE
+		id = the_magnificent_five
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = western_european_influence }
+		cost = 10
+		available = {
+			ENG = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = western_european_influence
+	}
+	focus = { #INCOMPLETE
+		id = infiltrate_british_left
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = the_magnificent_five }
+		cost = 10
+		available = {
+			ENG = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = the_magnificent_five
+	}
+	focus = { #INCOMPLETE
+		id = advocate_british_decolonization
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = western_european_influence }
+		cost = 10
+		available = {
+			ENG = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = western_european_influence
+	}
+	focus = { #INCOMPLETE
+		id = advocate_french_decolonization
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { 
+		focus = advocate_british_decolonization 
+		focus = french_communist_strategy
+		}
+		cost = 10
+		available = {
+			FRA = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = advocate_british_decolonization
+	}
+	focus = { #INCOMPLETE
+		id = french_communist_strategy
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = western_european_influence }
+		cost = 10
+		available = {
+			FRA = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 4
+		y = 1
+		relative_position_id = western_european_influence
+	}
+	focus = { #INCOMPLETE
+		id = french_communist_funding
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = french_communist_strategy }
+		cost = 10
+		available = {
+			FRA = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = french_communist_strategy
+	}
+	focus = { #INCOMPLETE
+		id = compromise_french_institutions
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = french_communist_funding }
+		cost = 10
+		available = {
+			FRA = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = french_communist_funding
+	}
+	focus = { #INCOMPLETE
+		id = attempt_french_coup
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = compromise_french_institutions }
+		cost = 10
+		available = {
+			FRA = {
+				exists = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = compromise_french_institutions
+	}
+}
