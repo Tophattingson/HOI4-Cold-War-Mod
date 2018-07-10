@@ -1,0 +1,81 @@
+ideas = {
+	country = {
+		gulag_system = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = nkvd_2
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = -0.05
+				fascism_drift = -0.05
+				research_time_factor = 0.1
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.1
+			}
+		}
+		collectivized_agriculture = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = 0.05
+			}
+		}
+		famine_1947 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				date > 1947.09.01
+			}
+			picture = great_depression
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.3
+				production_speed_buildings_factor = -0.3
+				MONTHLY_POPULATION = -0.5
+				stability_factor = -0.05
+			}
+		}
+		great_patriotic_war = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_victors_of_ww1
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.5
+				war_support_factor = -0.2
+			}
+		}
+	}	
+}
+			
