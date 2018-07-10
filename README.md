@@ -17,7 +17,7 @@ For national focuses, we have two design goals. Firstly, focus trees will have l
 
 ## Plan for V0.1 Release
 
-* Starting country borders for 1947 set up.
-* Preliminary focus trees for the USA, USSR, France and UK
-* Decolonization events
-* Resolution of the Occupation of Germany and Austria
+* Starting country borders for 1947 set up. - Partially Done
+* Preliminary focus trees for the USA, USSR, France and UK - Not Started
+* Decolonization events - Started
+* Resolution of the Occupation of Germany and Austria - Not Started
