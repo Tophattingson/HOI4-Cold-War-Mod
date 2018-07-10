@@ -4,7 +4,7 @@ oob = "SOV_1936"
 
 set_research_slots = 3
 set_stability = 0.5
-set_war_support = 0.8
+set_war_support = 0.5
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
@@ -126,15 +126,16 @@ set_politics = {
 create_faction = Comintern
 add_to_faction = SOV
 add_to_faction = MON
-add_to_faction = TAN
 add_to_faction = AUE
 add_to_faction = UKR
 add_to_faction = BLR
 
 
 add_ideas = {
-	trotskyite_plot
-	home_of_revolution
+	gulag_system
+	collectivized_agriculture
+	famine_1947
+	great_patriotic_war
 }
 
 create_country_leader = {
@@ -685,30 +686,5 @@ create_equipment_variant = {
 		destroyer_engine_upgrade = 3
 		ship_ASW_upgrade = 3
 		ship_anti_air_upgrade = 3
-	}
-}
-
-1939.1.1 = {
-
-	create_equipment_variant = {
-		name = "Series X Shchuka"
-		type = submarine_2
-		upgrades = {
-			ship_reliability_upgrade = 3
-			sub_engine_upgrade = 3
-			sub_stealth_upgrade = 3
-			sub_torpedo_upgrade = 3
-		}
-	}
-
-	create_equipment_variant = {
-		name = "Maxim Gorky Class"
-		type = heavy_cruiser_2
-		upgrades = {
-			ship_reliability_upgrade = 2
-			ship_engine_upgrade = 2
-			ship_armor_upgrade = 2
-			ship_gun_upgrade = 2
-		}
 	}
 }
