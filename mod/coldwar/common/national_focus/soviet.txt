@@ -10,6 +10,9 @@ focus_tree = {
 	}
 	default = no
 	
+	continuous_focus_position = { x = 50 y = 1200 }
+	
+	#WESTERN INFLUENCE TREE
 	focus = {
 		id = western_european_influence
 		icon = GFX_focus_generic_soviet_politics
@@ -105,6 +108,34 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = german_rearmament
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 2
+				category = electronics
+				category = nuclear
+				category = rocketry
+			}
+			if = {
+				limit = { GEE = { exists = yes } }
+				GEE = {
+					add_popularity = {
+						ideology = communism
+						popularity = -0.1
+					}
+				}
+			}
+			if = {
+				limit = { DDR = { exists = yes } }
+				DDR = {
+					add_popularity = {
+						ideology = communism
+						popularity = -0.1
+					}
+				}
+			}
+		}
 	}
 	focus = { #INCOMPLETE
 		id = establish_east_germany
@@ -114,6 +145,12 @@ focus_tree = {
 			focus = german_rearmament
 		}
 		cost = 10
+		bypass = {
+			OR = {
+				DDR = { exists = yes }
+				GEE = { exists = no }
+			}
+		}
 		available = {
 			GEE = {
 				is_puppet_of = SOV
@@ -359,4 +396,192 @@ focus_tree = {
 		y = 1
 		relative_position_id = compromise_french_institutions
 	}
+	
+	#ECONOMY TREE
+	focus = {
+		id = famine_intervention
+		icon = GFX_focus_generic_concessions
+		cost = 10
+		bypass = {
+			NOT = { has_idea = famine_1947 }
+		}		
+		x = 2
+		y = 5
+		completion_reward = {
+			remove_ideas = famine_1947
+		}
+	}
+	focus = { 
+		id = fourth_five_year_plan
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = famine_intervention }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = famine_intervention
+		completion_reward = {
+			add_timed_idea = {
+				idea = fourth_plan_idea
+				days = 1800
+			}
+		}
+	}
+	focus = { 
+		id = fifth_five_year_plan
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = fourth_five_year_plan }
+		cost = 10
+		available = {
+			NOT = { has_idea = fourth_plan_idea }
+		}
+		x = 0
+		y = 1
+		relative_position_id = fourth_five_year_plan
+		completion_reward = {
+			add_timed_idea = {
+				idea = fifth_plan_idea
+				days = 1800
+			}
+		}
+	}
+	focus = { 
+		id = sixth_five_year_plan
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = fifth_five_year_plan }
+		cost = 10
+		available = {
+			NOT = { has_idea = fifth_plan_idea }
+		}
+		x = 0
+		y = 1
+		relative_position_id = fifth_five_year_plan
+		completion_reward = {
+			add_timed_idea = {
+				idea = sixth_plan_idea
+				days = 1800
+			}
+		}
+	}
+	focus = { #INCOMPLETE
+		id = belarusian_investment
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = fourth_five_year_plan }
+		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = fourth_five_year_plan
+	}
+	focus = { #INCOMPLETE
+		id = ukranian_investment
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = fourth_five_year_plan }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = fourth_five_year_plan
+	}
+	#KHRUSHCHEV THAW TREE
+	focus = { #INCOMPLETE NEEDS TO TRIGGER EVENTS IN ALBANIA AND COMMUNIST CHINA
+		id = the_secret_speech
+		icon = GFX_goal_anti_comintern_pact
+		cost = 10
+		available = {
+			NOT = {
+				has_country_leader = {
+					name = "Joseph Stalin"
+					ruling_only = yes
+				}
+			}
+		}
+		x = 7
+		y = 5
+		completion_reward = {
+			add_political_power = 150
+			#"Other communist governments may be angered by this act of revisionism."
+			custom_effect_tooltip = the_secret_speech_tt
+		}
+	}
+	focus = {
+		id = destalinization
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = the_secret_speech }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = the_secret_speech
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = wind_down_gulags
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = destalinization }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = destalinization
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = gulag_system
+				add_idea = gulag_system_reform
+			}
+		}
+	}
+	focus = {
+		id = mass_psychiatric_abuse
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = wind_down_gulags }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = wind_down_gulags
+		completion_reward = {
+			remove_ideas = gulag_system_reform
+		}
+	}
+	focus = {
+		id = end_lysenkoism
+		icon = GFX_focus_research
+		prerequisite = { focus = destalinization }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = destalinization
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			swap_ideas = {
+				remove_idea = collectivized_agriculture
+				add_idea = collectivized_agriculture_reform1
+			}
+		}
+	}
+	focus = {
+		id = virgin_lands_campaign
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = end_lysenkoism }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = end_lysenkoism
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			swap_ideas = {
+				remove_idea = collectivized_agriculture_reform1
+				add_idea = collectivized_agriculture_reform2
+			}
+		}
+	}
+	#EASTERN EUROPE TREE
+	#SOUTHERN EUROPE TREE
 }
