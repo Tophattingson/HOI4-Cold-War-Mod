@@ -21,6 +21,27 @@ ideas = {
 				local_resources_factor = 0.1
 			}
 		}
+		gulag_system_reform = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = nkvd_2
+			
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = -0.05
+				fascism_drift = -0.05
+				research_time_factor = 0.05
+				stability_factor = 0.02
+				production_speed_buildings_factor = 0.02
+				local_resources_factor = 0.05
+			}
+		}
 		collectivized_agriculture = {
 			allowed = {
 				always = no
@@ -35,6 +56,39 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.1
+				stability_factor = 0.05
+			}
+		}
+		collectivized_agriculture_reform1 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		collectivized_agriculture_reform2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
 				stability_factor = 0.05
 			}
 		}
@@ -74,6 +128,54 @@ ideas = {
 			modifier = {
 				conscription_factor = -0.5
 				war_support_factor = -0.2
+			}
+		}
+		fourth_plan_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		fifth_plan_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		sixth_plan_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
 			}
 		}
 	}	
