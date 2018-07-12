@@ -19,9 +19,6 @@ focus_tree = {
 		x = 4
 		y = 0
 		cost = 10
-
-		available_if_capitulated = yes
-
 		completion_reward = {
 			add_political_power = 100
 		}
@@ -470,6 +467,43 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = fourth_five_year_plan
+		available = {
+			OR = {
+				194 = { is_owned_by = SOV }
+				194 = { owner = { is_puppet_of = SOV } }
+			}
+			OR = {
+				207 = { is_owned_by = SOV }
+				207 = { owner = { is_puppet_of = SOV } }
+			}
+		}
+		completion_reward = {
+			194 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			207 = {
+			add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				BLR = {
+					is_ai = no
+				}
+			}	
+		}
 	}
 	focus = { #INCOMPLETE
 		id = ukranian_investment
@@ -479,6 +513,43 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = fourth_five_year_plan
+		available = {
+			OR = {
+				227 = { is_owned_by = SOV }
+				227 = { owner = { is_puppet_of = SOV } }
+			}
+			OR = {
+				228 = { is_owned_by = SOV }
+				228 = { owner = { is_puppet_of = SOV } }
+			}
+		}
+		completion_reward = {
+			228 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			227 = {
+			add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				UKR = {
+					is_ai = no
+				}
+			}	
+		}
 	}
 	#KHRUSHCHEV THAW TREE
 	focus = { #INCOMPLETE NEEDS TO TRIGGER EVENTS IN ALBANIA AND COMMUNIST CHINA
@@ -583,5 +654,185 @@ focus_tree = {
 		}
 	}
 	#EASTERN EUROPE TREE
+	focus = {
+		id = eastern_european_hegemony
+		icon = GFX_focus_generic_soviet_politics
+		x = 14
+		y = 0
+		cost = 10
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = the_buffer_state_gap
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = eastern_european_hegemony }
+		cost = 10
+		x = -4
+		y = 1
+		relative_position_id = eastern_european_hegemony
+	}
+	focus = {
+		id = rig_hungarian_elections
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = the_buffer_state_gap }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = the_buffer_state_gap
+	}
+	focus = {
+		id = hungarian_coup
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = rig_hungarian_elections }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = rig_hungarian_elections
+	}
+	focus = {
+		id = put_down_the_uprising
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = hungarian_coup }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = hungarian_coup
+	}
+	focus = {
+		id = czechoslovakia_coup
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = the_buffer_state_gap }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = the_buffer_state_gap
+	}
+	focus = {
+		id = return_carpatho_ukraine
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = czechoslovakia_coup }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = czechoslovakia_coup
+	}
+	focus = {
+		id = belarus_and_ukraine_administration
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = eastern_european_hegemony }
+		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = eastern_european_hegemony
+	}
+	focus = {
+		id = solidify_polish_support
+		icon = GFX_focus_generic_polish_deal
+		prerequisite = { focus = eastern_european_hegemony }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = eastern_european_hegemony
+	}
+	focus = {
+		id = solidify_romanian_support
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = solidify_polish_support }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = solidify_polish_support
+	}
+	focus = {
+		id = renegotiate_polish_borders
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = solidify_romanian_support }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = solidify_romanian_support
+	}
+	focus = {
+		id = renegotiate_romanian_borders
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = renegotiate_polish_borders }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = renegotiate_polish_borders
+	}
+	focus = {
+		id = the_molotov_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = eastern_european_hegemony }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = eastern_european_hegemony
+	}
+	focus = {
+		id = comecon
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = the_molotov_plan }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = the_molotov_plan
+	}
+	focus = {
+		id = the_pact
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = comecon }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = comecon
+	}
+	focus = {
+		id = finlandization
+		icon = GFX_goal_unknown
+		prerequisite = { focus = eastern_european_hegemony }
+		available = {
+			FIN = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+			}
+		}
+		cost = 10
+		x = 4
+		y = 1
+		relative_position_id = eastern_european_hegemony
+		completion_reward = {
+			FIN = {
+				country_event = {
+					id = coldwar_soviet.1
+					days = 7
+				}
+			}
+			#We will offer Finland a guarantee of independence in return for their neutrality
+			custom_effect_tooltip = finlandization_tt
+		}
+	}
+	focus = {
+		id = finlandize_sweden
+		icon = GFX_goal_unknown
+		prerequisite = { focus = finlandization }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = finlandization
+	}
+	focus = {
+		id = finlandize_norway
+		icon = GFX_goal_unknown
+		prerequisite = { focus = finlandize_sweden }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = finlandize_sweden
+	}
 	#SOUTHERN EUROPE TREE
 }
