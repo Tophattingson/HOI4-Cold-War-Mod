@@ -1,0 +1,145 @@
+﻿add_namespace = coldwar_soviet
+
+#East Germany Re-armed
+news_event = {
+	id = coldwar_soviet.0
+	title = coldwar_soviet.0.t
+	desc = coldwar_soviet.0.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.0.a
+		add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#finlandization
+country_event = {
+	id = coldwar_soviet.1
+	title = coldwar_soviet.1.t
+	desc = coldwar_soviet.1.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Accept treaty
+		name = coldwar_soviet.1.a
+		leave_faction = yes
+		add_ideas = neutrality_idea
+		SOV = {
+			give_guarantee = FIN
+			country_event = {
+				id = coldwar_soviet.2
+			}
+		}
+		ai_chance = { factor = 75 }
+	}
+	option = { #Reject treaty
+		name = coldwar_soviet.1.b
+		add_stability = -0.05
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.3
+			}
+		}
+		ai_chance = { factor = 25 }
+	}
+}
+
+#finlandization accepted
+news_event = {
+	id = coldwar_soviet.2
+	title = coldwar_soviet.2.t
+	desc = coldwar_soviet.2.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = coldwar_soviet.2.a
+	}
+}
+
+#finlandization rejected
+country_event = {
+	id = coldwar_soviet.3
+	title = coldwar_soviet.3.t
+	desc = coldwar_soviet.2.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Do nothing
+		name = coldwar_soviet.3.a
+		ai_chance = { factor = 75 }
+	}
+	option = { #wargoal puppet
+		name = coldwar_soviet.3.b
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FIN
+		}
+		ai_chance = { factor = 25 }
+	}
+}
