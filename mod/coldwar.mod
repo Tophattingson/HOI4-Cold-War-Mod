@@ -1,5 +1,6 @@
 ﻿name="Cold War Dev Version"
 path="mod/coldwar/"
+replace_path = "events" 
 tags={
 	"Alternative History"
 }
