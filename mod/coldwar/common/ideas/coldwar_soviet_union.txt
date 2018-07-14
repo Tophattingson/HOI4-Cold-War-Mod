@@ -178,6 +178,24 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 			}
 		}
+		molotov_plan_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				communism_drift = 0.05
+				communism_acceptance = 10
+			}
+		}
 	}	
 }
 			
