@@ -133,6 +133,19 @@ if = {
 }
 
 if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = SUD
+		autonomous_state = autonomy_colony
+	}
+	else = {
+		puppet = SUD
+	}
+}
+
+if = {
 	limit = { has_dlc = "Together for Victory" }
 
 	add_to_tech_sharing_group = commonwealth_research
