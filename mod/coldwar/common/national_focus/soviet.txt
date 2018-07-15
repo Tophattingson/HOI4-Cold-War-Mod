@@ -760,10 +760,41 @@ focus_tree = {
 		id = belarus_and_ukraine_administration
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = eastern_european_hegemony }
+		available = { 
+			OR = {
+				UKR = { is_puppet_of = SOV }
+				BLR = { is_puppet_of = SOV }
+			}
+		}
 		cost = 10
 		x = -2
 		y = 1
 		relative_position_id = eastern_european_hegemony
+		completion_reward = {
+			if = {
+				limit = { UKR = { is_puppet_of = SOV } }
+				country_event = { 
+					id = coldwar_soviet.6
+				}
+			}
+			if = {
+				limit = { BLR = { is_puppet_of = SOV } }
+				country_event = {
+					id = coldwar_soviet.7
+					days = 7
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					UKR = { is_ai = no }
+					BLR = { is_ai = no }
+				}
+			}	
+		}
 	}
 	focus = {
 		id = solidify_polish_support
@@ -839,6 +870,19 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = the_molotov_plan
+		completion_reward = {
+			add_ideas = comecon_idea
+			every_country = {
+				limit = {
+					has_government = communism
+					NOT = { tag = SOV }
+				}
+				country_event = {
+					id = coldwar_soviet.8
+					days = 7
+				}
+			}
+		}
 	}
 	focus = {
 		id = the_pact
