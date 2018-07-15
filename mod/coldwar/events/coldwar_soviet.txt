@@ -147,3 +147,148 @@ country_event = {
 		}
 	}
 }
+
+#Ukraine Administration
+country_event = {
+	id = coldwar_soviet.6
+	title = coldwar_soviet.6.t
+	desc = coldwar_soviet.6.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Crimea to Ukraine
+		name = coldwar_soviet.6.a
+		trigger = {
+			owns_state = 137
+		}
+		UKR = { 
+			transfer_state = 137
+			add_state_core = 137
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				UKR = { is_ai = no }
+			}
+		}
+	}
+	option = { #Do nothing
+		name = coldwar_soviet.6.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { #Direct rule
+		name = coldwar_soviet.6.c
+		trigger = {
+			UKR = { is_ai = yes }
+		}
+		annex_country = {
+			target = UKR
+			transfer_troops = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Belarus Administration
+country_event = {
+	id = coldwar_soviet.7
+	title = coldwar_soviet.7.t
+	desc = coldwar_soviet.7.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Baltics to Belarus
+		name = coldwar_soviet.7.a
+		trigger = {
+			owns_state = 5
+			owns_state = 188
+			owns_state = 189
+			owns_state = 11
+			owns_state = 190
+			owns_state = 12
+			owns_state = 13
+			owns_state = 191
+		}
+		BLR = { 
+			transfer_state = 5
+			transfer_state = 188
+			transfer_state = 189
+			transfer_state = 11
+			transfer_state = 190
+			transfer_state = 12
+			transfer_state = 13
+			transfer_state = 191
+			add_state_core = 5
+			add_state_core = 188
+			add_state_core = 189
+			add_state_core = 11
+			add_state_core = 190
+			add_state_core = 12
+			add_state_core = 13
+			add_state_core = 191
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				BLR = { is_ai = no }
+			}
+		}
+	}
+	option = { #Do nothing
+		name = coldwar_soviet.7.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { #Direct rule
+		name = coldwar_soviet.7.c
+		trigger = {
+			BLR = { is_ai = yes }
+		}
+		annex_country = {
+			target = BLR
+			transfer_troops = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Comecon invitation
+country_event = {
+	id = coldwar_soviet.8
+	title = coldwar_soviet.8.t
+	desc = coldwar_soviet.8.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Join Comecon
+		name = coldwar_soviet.8.a
+		add_ideas = comecon_idea
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = { #Refuse Comecon
+		name = coldwar_soviet.8.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_puppet_of = SOV
+			}
+			modifier = { #Albania, Yugoslavia, and China less likely to join
+				factor = 10
+				OR = { 
+					TAG = ALB
+					TAG = YUG
+					TAG = PRC
+				}
+			}
+		}
+	}
+}
