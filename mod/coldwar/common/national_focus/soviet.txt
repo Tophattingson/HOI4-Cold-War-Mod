@@ -888,10 +888,35 @@ focus_tree = {
 		id = the_pact
 		icon = GFX_goal_tripartite_pact
 		prerequisite = { focus = comecon }
+		available = {
+			is_in_faction = no
+		}
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = comecon
+		completion_reward = {
+			create_faction = "the_pact_faction"
+			every_country = {
+				limit = {
+					capital_scope = { #Only countries with a European Capital get immedietely invited
+						is_on_continent = europe 
+					}
+					has_government = communism
+					is_puppet = no #Puppets don't have independant foreign policy
+					is_in_faction = no
+					NOT = { 
+						tag = SOV 
+						tag = YUG
+					}
+					has_war = no
+				}
+				country_event = {
+					id = coldwar_soviet.9
+					days = 7
+				}
+			}
+		}
 	}
 	focus = {
 		id = finlandization
@@ -947,5 +972,87 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
+	}
+	focus = {
+		id = greek_civil_war_intervention
+		icon = GFX_goal_unknown
+		prerequisite = { focus = southern_european_expansion }
+		bypass = { #Bypass if civil war has already ended
+			has_global_flag = greek_civil_war
+			GRE = {
+				has_civil_war = no
+			}
+		}
+		cost = 10
+		x = -3
+		y = 1
+		relative_position_id = southern_european_expansion
+	}
+	focus = {
+		id = alliance_with_yugoslavia
+		icon = GFX_goal_unknown
+		prerequisite = { focus = greek_civil_war_intervention }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = greek_civil_war_intervention
+	}
+	focus = {
+		id = yugoslavia_in_the_pact
+		icon = GFX_goal_unknown
+		prerequisite = { focus = alliance_with_yugoslavia }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = alliance_with_yugoslavia
+	}
+	focus = {
+		id = pci_funding
+		icon = GFX_goal_unknown
+		prerequisite = { focus = southern_european_expansion }
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = southern_european_expansion
+	}
+	focus = {
+		id = spanish_anti_fascist_support
+		icon = GFX_goal_unknown
+		prerequisite = { focus = southern_european_expansion }
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = southern_european_expansion
+	}
+	focus = {
+		id = the_48_election_strategy
+		icon = GFX_goal_unknown
+		prerequisite = { focus = pci_funding }
+		mutually_exclusive = { focus = the_italian_coup }
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = pci_funding
+	}
+	focus = {
+		id = the_italian_coup
+		icon = GFX_goal_unknown
+		prerequisite = { focus = pci_funding }
+		mutually_exclusive = { focus = the_48_election_strategy }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = pci_funding
+	}
+	focus = {
+		id = years_of_lead
+		prerequisite = { 
+			focus = the_italian_coup
+			focus = the_48_election_strategy
+		}
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = the_48_election_strategy
 	}
 }
