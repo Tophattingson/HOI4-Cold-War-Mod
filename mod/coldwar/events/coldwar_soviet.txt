@@ -292,3 +292,34 @@ country_event = {
 		}
 	}
 }
+
+#Pact invitation
+country_event = {
+	id = coldwar_soviet.9
+	title = coldwar_soviet.9.t
+	desc = coldwar_soviet.9.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Join Comecon
+		name = coldwar_soviet.9.a
+		SOV = {
+			add_to_faction = ROOT
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = { #Refuse Comecon
+		name = coldwar_soviet.9.b
+		ai_chance = {
+			factor = 1
+			modifier = { #Albania and Yugoslavia less likely to join
+				factor = 10
+				OR = { 
+					TAG = ALB
+					TAG = YUG
+				}
+			}
+		}
+	}
+}
