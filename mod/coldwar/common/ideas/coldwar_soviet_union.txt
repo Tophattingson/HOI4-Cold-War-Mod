@@ -212,6 +212,43 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 			}
 		}
+		german_autumn_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_government = communism
+			}
+			picture = FRA_scw_intervention_republicans_focus
+			
+			removal_cost = -1
+			
+			modifier = {
+			}
+		}
+		years_of_lead_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+			picture = FRA_scw_intervention_republicans_focus
+			
+			removal_cost = -1
+			
+			modifier = {
+			}
+		}
 	}	
 }
 			
