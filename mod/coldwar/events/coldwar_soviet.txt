@@ -323,3 +323,127 @@ country_event = {
 		}
 	}
 }
+
+#Unified Austria USA negotiation
+country_event = {
+	id = coldwar_soviet.10
+	title = coldwar_soviet.10.t
+	desc = coldwar_soviet.10.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Agreeable terms
+		name = coldwar_soviet.10.a
+		ai_chance = {
+			factor = 10
+		}
+		AUS = {
+			annex_country = {
+				target = AUE
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = AUA
+				transfer_troops = yes
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_ideas = neutrality_idea
+		}
+		ENG = {
+			country_event = {
+				id = coldwar_soviet.12
+			}
+		}
+		FRA = {
+			country_event = {
+				id = coldwar_soviet.13
+			}
+		}
+		add_threat = -5
+		SOV = {
+			add_threat = -5
+		}
+	}
+	option = { #Disagree
+		name = coldwar_soviet.10.b
+		ai_chance = {
+			factor = 1
+		}
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.11
+			}
+		}
+	}
+}
+
+#USA rejects neutral Austria
+#UNFINISHED this should lead to splitting Austria
+country_event = {
+	id = coldwar_soviet.11
+	title = coldwar_soviet.11.t
+	desc = coldwar_soviet.11.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.11.a
+	}
+}
+
+#British Austria join
+country_event = {
+	id = coldwar_soviet.12
+	title = coldwar_soviet.12.t
+	desc = coldwar_soviet.12.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Accept
+		name = coldwar_soviet.12.a
+		ai_chance = {
+			factor = 10
+		}
+		AUS = {
+			annex_country = {
+				target = AUK
+				transfer_troops = yes
+			}
+		}
+	}
+	option = { #Refuse
+		name = coldwar_soviet.12.b
+		ai_chance = {
+			factor = 1
+		}
+		add_threat = 10
+	}
+}
+
+#French Austria join
+country_event = {
+	id = coldwar_soviet.13
+	title = coldwar_soviet.13.t
+	desc = coldwar_soviet.13.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #Accept
+		name = coldwar_soviet.13.a
+		ai_chance = {
+			factor = 10
+		}
+		AUS = {
+			annex_country = {
+				target = AUF
+				transfer_troops = yes
+			}
+		}
+	}
+	option = { #Refuse
+		name = coldwar_soviet.13.b
+		ai_chance = {
+			factor = 1
+		}
+		add_threat = 10
+	}
+}

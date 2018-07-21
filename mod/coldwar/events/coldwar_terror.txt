@@ -1,0 +1,116 @@
+﻿add_namespace = coldwar_terror
+
+#civilian murder
+country_event = {
+	id = coldwar_terror.0
+	title = coldwar_terror.0.t
+	desc = coldwar_terror.0.d
+	picture = GFX_news_event_12
+	trigger = {
+		OR = {
+			has_idea = years_of_lead_idea
+			has_idea = german_autumn_idea
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 1.5
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 1.5
+			has_stability > 0.8
+		}
+	}
+	option = {
+		name = coldwar_terror.0.a
+		add_stability = -0.02
+		add_popularity = {
+			ideology = communism
+			popularity = -0.02
+		}
+	}
+}
+
+#infrastructure bombing
+country_event = {
+	id = coldwar_terror.1
+	title = coldwar_terror.1.t
+	desc = coldwar_terror.1.d
+	picture = GFX_news_event_12
+	trigger = {
+		OR = {
+			has_idea = years_of_lead_idea
+			has_idea = german_autumn_idea
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 1.5
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 1.5
+			has_stability > 0.8
+		}
+	}
+	option = {
+		name = coldwar_terror.1.a
+		any_owned_state = {
+			limit = {
+				infrastructure > 1
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.02
+		}
+	}
+}
+
+#factory bombing
+country_event = {
+	id = coldwar_terror.2
+	title = coldwar_terror.2.t
+	desc = coldwar_terror.2.d
+	picture = GFX_news_event_12
+	trigger = {
+		OR = {
+			has_idea = years_of_lead_idea
+			has_idea = german_autumn_idea
+		}
+	}
+	mean_time_to_happen = {
+		days = 240
+		modifier = {
+			factor = 1.5
+			has_stability > 0.5
+		}
+		modifier = {
+			factor = 1.5
+			has_stability > 0.8
+		}
+	}
+	option = {
+		name = coldwar_terror.2.a
+		any_owned_state = {
+			limit = {
+				civilian_factory > 1
+			}
+			damage_building = {
+				type = civilian_factory
+				damage = 1
+			}
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.02
+		}
+	}
+}
