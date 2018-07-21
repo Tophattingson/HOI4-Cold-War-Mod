@@ -233,7 +233,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = establish_east_germany
 	}
-	focus = { #INCOMPLETE
+	focus = {
 		id = the_german_autumn
 		icon = GFX_goal_generic_military_deal
 		prerequisite = { 
@@ -242,11 +242,29 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			WGR = {
-				exists = yes
-				NOT = {
-					has_government = communism
+			OR = {
+				WGR = {
+					exists = yes
+					NOT = {
+						has_government = communism
+					}
 				}
+				GER = {
+					exists = yes
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { WGR = { exists = yes } }
+				WGR = { add_ideas = german_autumn_idea }
+			}
+			if = {
+				limit = { GER = { exists = yes } }
+				GER = { add_ideas = german_autumn_idea }
 			}
 		}
 		x = -1
@@ -291,6 +309,15 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = establish_east_germany
+		completion_reward = {
+			USA = {
+				country_event = {
+					id = coldwar_soviet.10
+					days = 7
+				}
+			}
+			custom_effect_tooltip = unified_neutral_austria_tt
+		}
 	}
 	focus = { #INCOMPLETE
 		id = the_magnificent_five
@@ -1050,9 +1077,25 @@ focus_tree = {
 			focus = the_italian_coup
 			focus = the_48_election_strategy
 		}
+		available = {
+			ITA = {
+				exists = yes
+				NOT = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+			}
+		}
 		cost = 10
 		x = 1
 		y = 1
 		relative_position_id = the_48_election_strategy
+		completion_reward = {
+			ITA = {
+				add_ideas = years_of_lead_idea
+			}
+		}
 	}
 }
