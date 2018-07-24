@@ -11,7 +11,7 @@ state={
 
 
 	history={
-		owner = GEE
+		owner = DDR
 		buildings = {
 			infrastructure = 7
 			arms_factory = 1

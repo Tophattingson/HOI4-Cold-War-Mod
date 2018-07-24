@@ -9,7 +9,7 @@ state={
 
 
 	history={
-		owner = GEE
+		owner = DDR
 		victory_points = {
 			3522 5 
 		}

@@ -8,7 +8,7 @@ state={
 	state_category = town
 
 	history={
-		owner = GEE
+		owner = DDR
 		buildings = {
 			infrastructure = 6
 			dockyard = 1
