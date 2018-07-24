@@ -28,6 +28,7 @@ country_event = {
 	}
 	option = { #Side with Communism
 		name = coldwar_greece.0.b
+		trigger = { is_ai = no }
 		set_capital = 731
 		start_civil_war = {
 			ruling_party = communism
