@@ -300,7 +300,7 @@ country_event = {
 	desc = coldwar_soviet.9.d
 	picture = GFX_news_event_12
 	is_triggered_only = yes
-	option = { #Join Comecon
+	option = { #Join Pact
 		name = coldwar_soviet.9.a
 		SOV = {
 			add_to_faction = ROOT
@@ -309,7 +309,7 @@ country_event = {
 			factor = 10
 		}
 	}
-	option = { #Refuse Comecon
+	option = { #Refuse Pact
 		name = coldwar_soviet.9.b
 		ai_chance = {
 			factor = 1
@@ -445,5 +445,70 @@ country_event = {
 			factor = 1
 		}
 		add_threat = 10
+	}
+}
+
+#Formation of East Germany
+news_event = {
+	id = coldwar_soviet.14
+	title = coldwar_soviet.14.t
+	desc = coldwar_soviet.14.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.14.a
+	}
+}
+
+#Yugoslavia alliance
+country_event = {
+	id = coldwar_soviet.15
+	title = coldwar_soviet.15.t
+	desc = coldwar_soviet.15.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = { #accept alliance
+		name = coldwar_soviet.15.a
+		give_guarantee = SOV
+		SOV = {
+			give_guarantee = YUG
+			country_event = {
+				id = coldwar_soviet.16
+				days = 7
+			}
+		}
+	}
+	option = { #reject alliance
+		name = coldwar_soviet.15.b
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.17
+				days = 7
+			}
+		}
+	}
+}
+
+#Yugoslavia accepted alliance
+country_event = {
+	id = coldwar_soviet.16
+	title = coldwar_soviet.16.t
+	desc = coldwar_soviet.16.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.16.a
+	}
+}
+
+#Yugoslavia rejected alliance
+country_event = {
+	id = coldwar_soviet.17
+	title = coldwar_soviet.17.t
+	desc = coldwar_soviet.17.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.17.a
 	}
 }
