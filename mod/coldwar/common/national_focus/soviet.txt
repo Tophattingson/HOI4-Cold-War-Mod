@@ -177,6 +177,33 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = further_german_reparations
+		completion_reward = {
+			end_puppet = DDR
+			DDR = {
+				drop_cosmetic_tag = yes
+				add_state_core = 60
+				add_state_core = 61
+				add_state_core = 62
+				add_state_core = 64
+				add_state_core = 65
+				add_state_core = 766
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Wilhelm Pieck"
+					desc = "POLITICS_WILHELM_PIECK"
+					picture = "gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
+					ideology = stalinism
+					traits = {
+					
+					}
+				}
+			}
+			every_country = {
+				news_event = {
+					id = coldwar_soviet.14
+				}
+			}
+		}
 	}
 	focus = { #INCOMPLETE
 		id = blockade_berlin
@@ -987,16 +1014,32 @@ focus_tree = {
 		id = greek_civil_war_intervention
 		icon = GFX_goal_unknown
 		prerequisite = { focus = southern_european_expansion }
-		bypass = { #Bypass if civil war has already ended
-			has_global_flag = greek_civil_war
+		available = {
 			GRE = {
-				has_civil_war = no
+				has_civil_war = yes
 			}
 		}
 		cost = 10
 		x = -3
 		y = 1
 		relative_position_id = southern_european_expansion
+		completion_reward = {
+			if = {
+				limit = { GRE = { has_civil_war = yes } }
+				random_other_country = {
+					limit = {
+						original_tag = GRE
+						has_government = communism
+					}
+					save_event_target_as = communist_greece
+				}
+				send_equipment = {
+					equipment = infantry_equipment
+					amount = 5000
+					target = event_target:communist_greece
+				}
+			}
+		}
 	}
 	focus = {
 		id = alliance_with_yugoslavia
@@ -1006,15 +1049,39 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = greek_civil_war_intervention
+		completion_reward = {
+			YUG = {
+				country_event = {
+					id = coldwar_soviet.15
+					days = 7
+				}
+			}
+		}
 	}
 	focus = {
 		id = yugoslavia_in_the_pact
 		icon = GFX_goal_unknown
 		prerequisite = { focus = alliance_with_yugoslavia }
+		available = {
+			is_faction_leader = yes
+			is_guaranteed_by = YUG
+			has_guaranteed = YUG
+			YUG = {
+				is_in_faction = no
+			}
+		}
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = alliance_with_yugoslavia
+		completion_reward = {
+			YUG = {
+				country_event = {
+					id = coldwar_soviet.9
+					days = 7
+				}
+			}
+		}
 	}
 	focus = {
 		id = pci_funding
