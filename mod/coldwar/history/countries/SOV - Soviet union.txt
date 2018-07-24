@@ -91,11 +91,11 @@ if = {
 		has_dlc = "Together for Victory"
 	}
 	set_autonomy = {
-		target = GEE
+		target = DDR
 		autonomous_state = autonomy_integrated_puppet
 	}
 	else = {
-		puppet = GEE
+		puppet = DDR
 	}
 }
 
