@@ -30,7 +30,7 @@ focus_tree = {
 		mutually_exclusive = { focus = further_german_reparations }
 		cost = 10
 		available = {
-			GEE = {
+			DDR = {
 				is_puppet_of = SOV
 			}
 		}
@@ -39,7 +39,7 @@ focus_tree = {
 		relative_position_id = western_european_influence
 		cost = 10
 		completion_reward = {
-			GEE = {
+			DDR = {
 				news_event = {
 					id = coldwar_soviet.0
 				}
@@ -71,13 +71,13 @@ focus_tree = {
 		mutually_exclusive = { focus = german_rearmament }
 		cost = 10
 		available = {
-			GEE = {
+			DDR = {
 				is_puppet_of = SOV
 			}
 			64 = {
 				arms_factory > 0
 				industrial_complex > 0
-				is_owned_by = GEE
+				is_owned_by = DDR
 			}
 		}
 		x = -2
@@ -107,7 +107,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			GEE = {
+			DDR = {
 				news_event = {
 					id = coldwar_soviet.4
 				}
@@ -128,15 +128,10 @@ focus_tree = {
 		}
 		cost = 10
 		available = {
-			OR = {
-				GEE = {
+			DDR = {
+				OR = {
 					is_puppet_of = SOV
-				}
-				DDR = {
-					OR = {
-						is_puppet_of = SOV
-						is_in_faction_with = SOV
-					}
+					is_in_faction_with = SOV
 				}
 			}
 		}
@@ -152,22 +147,10 @@ focus_tree = {
 				category = nuclear
 				category = rocketry
 			}
-			if = {
-				limit = { GEE = { exists = yes } }
-				GEE = {
-					add_popularity = {
-						ideology = communism
-						popularity = -0.1
-					}
-				}
-			}
-			if = {
-				limit = { DDR = { exists = yes } }
-				DDR = {
-					add_popularity = {
-						ideology = communism
-						popularity = -0.1
-					}
+			DDR = {
+				add_popularity = {
+					ideology = communism
+					popularity = -0.1
 				}
 			}
 		}
@@ -182,12 +165,12 @@ focus_tree = {
 		cost = 10
 		bypass = {
 			OR = {
-				DDR = { exists = yes }
-				GEE = { exists = no }
+				DDR = { exists = no }
+				DDR = { NOT = { is_puppet_of = SOV } }
 			}
 		}
 		available = {
-			GEE = {
+			DDR = {
 				is_puppet_of = SOV
 			}
 		}
