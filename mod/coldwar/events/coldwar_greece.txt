@@ -1,7 +1,7 @@
 ﻿add_namespace = coldwar_greece
 
 #Greek Civil War
-news_event = {
+country_event = {
 	id = coldwar_greece.0
 	title = coldwar_greece.0.t
 	desc = coldwar_greece.0.d
@@ -14,10 +14,9 @@ news_event = {
 	mean_time_to_happen = {
 		days = 30 #Set to occur almost immedietely
 	}
-	option = { #Side with Neutrality
+	option = { #Side with Democracy
 		name = coldwar_greece.0.a
 		start_civil_war = {
-			ruling_party = neutrality
 			ideology = communism
 			size = 0.5
 			capital = 731
@@ -29,9 +28,10 @@ news_event = {
 	}
 	option = { #Side with Communism
 		name = coldwar_greece.0.b
+		set_capital = 731
 		start_civil_war = {
 			ruling_party = communism
-			ideology = neutrality
+			ideology = democratic
 			size = 0.5
 			capital = 47
 			states = {
