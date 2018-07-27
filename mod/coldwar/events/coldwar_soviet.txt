@@ -512,3 +512,132 @@ country_event = {
 		name = coldwar_soviet.17.a
 	}
 }
+
+#Death of Stalin
+news_event = {
+	id = coldwar_soviet.18
+	title = coldwar_soviet.18.t
+	desc = coldwar_soviet.18.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1953.1.1
+		has_country_leader = {
+			name = "Joseph Stalin"
+			ruling_only = yes
+		}
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	option = {
+		name = coldwar_soviet.18.a
+		create_country_leader = {
+			name= "The Troika"
+			desc = "POLITICS_TROIKA_DESC"
+			picture = ""
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+		add_stability = -0.15
+		every_country = {
+			limit = { NOT = { tag = SOV } }
+			news_event = {
+				id = coldwar_soviet.19
+			}
+		}
+	}
+}
+
+#Death of Stalin news event
+country_event = {
+	id = coldwar_soviet.19
+	title = coldwar_soviet.19.t
+	desc = coldwar_soviet.19.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.19.a
+	}
+}
+
+#End of the Troika
+
+country_event = {
+	id = coldwar_soviet.20
+	title = coldwar_soviet.20.t
+	desc = coldwar_soviet.20.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1953.1.1
+		has_country_leader = {
+			name = "The Troika"
+			ruling_only = yes
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	option = { #Go with Khrushchev
+		name = coldwar_soviet.20.a
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Nikita Sergeyevich Khrushchev"
+			desc = ""
+			picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				
+			}
+		}
+		add_stability = 0.10
+	}
+	option = { #Go with Beria
+		name = coldwar_soviet.20.b
+		retire_country_leader = yes
+		create_country_leader = {
+			name= "Lavrentiy Beria"
+			desc = ""
+			picture = ""
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+		add_stability = 0.05
+	}
+	option = { #Go with Malenkov
+		name = coldwar_soviet.20.c
+		retire_country_leader = yes
+		create_country_leader = {
+			name= "Georgy Malenkov"
+			desc = "POLITICS_TROIKA_DESC"
+			picture = ""
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+		add_stability = 0.05
+	}
+	option = { #Go with Molotov
+		name = coldwar_soviet.20.e
+		retire_country_leader = yes
+		create_country_leader = {
+			name= "Vyacheslav Molotov"
+			desc = "POLITICS_TROIKA_DESC"
+			picture = ""
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+		add_stability = 0.05
+	}
+}
