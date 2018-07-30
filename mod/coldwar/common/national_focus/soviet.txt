@@ -384,8 +384,8 @@ focus_tree = {
 		id = advocate_french_decolonization
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { 
-		focus = advocate_british_decolonization 
-		focus = french_communist_strategy
+			focus = advocate_british_decolonization 
+			focus = french_communist_strategy
 		}
 		cost = 10
 		available = {
@@ -433,6 +433,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = french_communist_strategy
+		completion_reward = {
+			FRA = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+		}
 	}
 	focus = { #INCOMPLETE
 		id = compromise_french_institutions
@@ -632,11 +640,9 @@ focus_tree = {
 		icon = GFX_goal_anti_comintern_pact
 		cost = 10
 		available = {
-			NOT = {
-				has_country_leader = {
-					name = "Joseph Stalin"
-					ruling_only = yes
-				}
+			has_country_leader = {
+				name = "Nikita Sergeyevich Khrushchev"
+				ruling_only = yes
 			}
 		}
 		x = 7
@@ -841,6 +847,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = eastern_european_hegemony
+		completion_reward = {
+			POL = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+		}
 	}
 	focus = {
 		id = solidify_romanian_support
@@ -850,6 +864,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = solidify_polish_support
+		completion_reward = {
+			ROM = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+		}
 	}
 	focus = {
 		id = renegotiate_polish_borders
@@ -985,19 +1007,53 @@ focus_tree = {
 		id = finlandize_sweden
 		icon = GFX_goal_unknown
 		prerequisite = { focus = finlandization }
+		available = {
+			SWE = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+			}
+		}
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = finlandization
+		completion_reward = {
+			SWE = {
+				country_event = {
+					id = coldwar_soviet.21
+					days = 7
+				}
+			}
+			#We will offer Sweden a guarantee of independence in return for their neutrality
+			custom_effect_tooltip = finlandize_sweden_tt
+		}
 	}
 	focus = {
 		id = finlandize_norway
 		icon = GFX_goal_unknown
 		prerequisite = { focus = finlandize_sweden }
+		available = {
+			NOR = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+			}
+		}
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = finlandize_sweden
+		completion_reward = {
+			NOR = {
+				country_event = {
+					id = coldwar_soviet.24
+					days = 7
+				}
+			}
+			#We will offer Norway a guarantee of independence in return for their neutrality
+			custom_effect_tooltip = finlandize_norway_tt
+		}
 	}
 	#SOUTHERN EUROPE TREE
 	focus = {
@@ -1091,6 +1147,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = southern_european_expansion
+		completion_reward = {
+			ITA = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+		}
 	}
 	focus = {
 		id = spanish_anti_fascist_support
