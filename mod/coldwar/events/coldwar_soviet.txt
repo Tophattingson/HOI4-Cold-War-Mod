@@ -62,7 +62,7 @@ news_event = {
 country_event = {
 	id = coldwar_soviet.3
 	title = coldwar_soviet.3.t
-	desc = coldwar_soviet.2.d
+	desc = coldwar_soviet.3.d
 	picture = GFX_news_event_12
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -639,5 +639,119 @@ country_event = {
 			}
 		}
 		add_stability = 0.05
+	}
+}
+
+#finlandization of sweden
+country_event = {
+	id = coldwar_soviet.21
+	title = coldwar_soviet.21.t
+	desc = coldwar_soviet.21.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Accept treaty
+		name = coldwar_soviet.21.a
+		leave_faction = yes
+		add_ideas = neutrality_idea
+		SOV = {
+			give_guarantee = SWE
+			country_event = {
+				id = coldwar_soviet.22
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+	option = { #Reject treaty
+		name = coldwar_soviet.21.b
+		add_stability = -0.05
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.23
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+}
+
+#finlandization of sweden accepted
+news_event = {
+	id = coldwar_soviet.22
+	title = coldwar_soviet.22.t
+	desc = coldwar_soviet.22.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = coldwar_soviet.22.a
+	}
+}
+
+#finlandization of sweden rejected
+country_event = {
+	id = coldwar_soviet.23
+	title = coldwar_soviet.23.t
+	desc = coldwar_soviet.23.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Do nothing
+		name = coldwar_soviet.23.a
+	}
+}
+
+#finlandization of norway
+country_event = {
+	id = coldwar_soviet.24
+	title = coldwar_soviet.24.t
+	desc = coldwar_soviet.24.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Accept treaty
+		name = coldwar_soviet.24.a
+		leave_faction = yes
+		add_ideas = neutrality_idea
+		SOV = {
+			give_guarantee = NOR
+			country_event = {
+				id = coldwar_soviet.25
+			}
+		}
+	}
+	option = { #Reject treaty
+		name = coldwar_soviet.24.b
+		add_stability = -0.05
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.26
+			}
+		}
+	}
+}
+
+#finlandization of norway accepted
+news_event = {
+	id = coldwar_soviet.25
+	title = coldwar_soviet.25.t
+	desc = coldwar_soviet.25.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = coldwar_soviet.25.a
+	}
+}
+
+#finlandization of norway rejected
+country_event = {
+	id = coldwar_soviet.26
+	title = coldwar_soviet.26.t
+	desc = coldwar_soviet.26.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Do nothing
+		name = coldwar_soviet.26.a
 	}
 }
