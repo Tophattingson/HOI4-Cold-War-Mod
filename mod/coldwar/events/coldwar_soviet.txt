@@ -924,3 +924,15 @@ country_event = {
 		name = coldwar_soviet.32.a
 	}
 }
+
+#Hungarian Coup
+news_event = {
+	id = coldwar_soviet.33
+	title = coldwar_soviet.33.t
+	desc = coldwar_soviet.33.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.33.a
+	}
+}
