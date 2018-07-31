@@ -886,10 +886,44 @@ focus_tree = {
 		id = renegotiate_romanian_borders
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = renegotiate_polish_borders }
+		available = {
+			ROM = { has_government = communism }
+			OR = {
+				78 = { is_owned_by = SOV }
+				78 = { owner = { is_puppet_of = SOV } }
+				AND = {
+					BUL = { has_government = communism }
+					77 = { is_owned_by = BUL }
+				}
+			}
+		}			
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = renegotiate_polish_borders
+		completion_reward = {
+			if = { #Condition to return Bessarabia or Bessarabia and Bucovina to Romania
+				limit = {
+					OR = {
+						78 = { is_owned_by = SOV }
+						78 = { owner = { is_puppet_of = SOV } }
+					}
+				}
+				country_event = {
+					id = coldwar_soviet.27
+				}
+			}
+			if = { #Condition to return Dobrudja to Romania
+				limit = {
+					BUL = { has_government = communism }
+					77 = { is_owned_by = BUL }
+				}
+				country_event = {
+					id = coldwar_soviet.29
+					days = 7
+				}
+			}
+		}
 	}
 	focus = {
 		id = the_molotov_plan
