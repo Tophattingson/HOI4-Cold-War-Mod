@@ -345,6 +345,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = western_european_influence
+		completion_reward = {
+			ENG = {
+				add_ideas = the_magnificent_five_idea
+			}
+		}
 	}
 	focus = { #INCOMPLETE
 		id = infiltrate_british_left
@@ -379,8 +384,23 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = western_european_influence
+		completion_reward = {
+			every_country = {
+				limit = {
+					NOT = { capital_scope = { is_on_continent = europe } }
+					NOT = { tag = CAN }
+					NOT = { tag = AST }
+					NOT = { tag = NZL }
+					is_subject_of = ENG
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.15
+				}
+			}
+		}
 	}
-	focus = { #INCOMPLETE
+	focus = {
 		id = advocate_french_decolonization
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { 
@@ -399,6 +419,18 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = advocate_british_decolonization
+		completion_reward = {
+			every_country = {
+				limit = {
+					NOT = { capital_scope = { is_on_continent = europe } }
+					is_subject_of = FRA
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.2
+				}
+			}
+		}
 	}
 	focus = { #INCOMPLETE
 		id = french_communist_strategy
@@ -753,6 +785,20 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = eastern_european_hegemony
+		completion_reward = {
+			HUN = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+			CZE = {
+				add_timed_idea = {
+					idea = soviet_communist_support_idea
+					days = 360
+				}
+			}
+		}
 	}
 	focus = {
 		id = rig_hungarian_elections
@@ -762,15 +808,44 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = the_buffer_state_gap
+		completion_reward = {
+			add_threat = 5
+			HUN = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.15
+				}
+			}
+		}
 	}
 	focus = {
 		id = hungarian_coup
 		icon = GFX_focus_generic_join_comintern
 		prerequisite = { focus = rig_hungarian_elections }
+		available = {
+			HUN = {
+				exists = yes
+				communism > 0.5
+				NOT = { has_government = communism }
+			}
+		}
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = rig_hungarian_elections
+		completion_reward = {
+			add_threat = 5
+			HUN = {
+				set_politics = {
+					ruling_party = communism
+				}
+			}
+			every_country = {
+				news_event = {
+					id = coldwar_soviet.33
+				}
+			}
+		}
 	}
 	focus = {
 		id = put_down_the_uprising
@@ -989,6 +1064,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = comecon
 		completion_reward = {
+			add_threat = 5
 			create_faction = "the_pact_faction"
 			every_country = {
 				limit = {
