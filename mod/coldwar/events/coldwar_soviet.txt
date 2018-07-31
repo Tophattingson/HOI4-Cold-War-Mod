@@ -755,3 +755,172 @@ country_event = {
 		name = coldwar_soviet.26.a
 	}
 }
+
+#Return Bessarabia to Romania
+country_event = {
+	id = coldwar_soviet.27
+	title = coldwar_soviet.27.t
+	desc = coldwar_soviet.27.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#Return Bessarabia
+		name = coldwar_soviet.27.a
+		add_threat = -4
+		SOV = { remove_state_core = 78 }
+		UKR = { remove_state_core = 78 }
+		ROM = { 
+			transfer_state = 78
+			add_state_core = 78
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			country_event = {
+				id = coldwar_soviet.28
+			}
+		}
+	}
+	option = {#Return Bessarabia and Bucovina
+		name = coldwar_soviet.27.b
+		trigger = {
+			OR = {
+				78 = { is_owned_by = SOV }
+				78 = { owner = { is_puppet_of = SOV } }
+			}
+		}
+		add_threat = -6
+		SOV = { 
+			remove_state_core = 78 
+			remove_state_core = 80
+		}
+		UKR = { 
+			remove_state_core = 78
+			remove_state_core = 80
+		}
+		ROM = { 
+			transfer_state = 78
+			transfer_state = 80
+			add_state_core = 78
+			add_state_core = 80
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+			country_event = {
+				id = coldwar_soviet.28
+			}
+		}
+	}
+	option = {#Do nothing
+		name = coldwar_soviet.27.c
+	}
+}
+
+#Territory returned to romania
+country_event = {
+	id = coldwar_soviet.28
+	title = coldwar_soviet.28.t
+	desc = coldwar_soviet.28.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Do nothing
+		name = coldwar_soviet.28.a
+	}
+}
+
+#Request Bulgaria transfer Dobrudja
+country_event = {
+	id = coldwar_soviet.29
+	title = coldwar_soviet.29.t
+	desc = coldwar_soviet.29.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Send the request
+		name = coldwar_soviet.29.a
+		BUL = {
+			country_event = {
+				id = coldwar_soviet.30
+				days = 3
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.15
+			}
+		}
+	}
+	option = { #Do nothing
+		name = coldwar_soviet.29.b
+	}
+}
+
+#Bulgaria response to request
+country_event = {
+	id = coldwar_soviet.30
+	title = coldwar_soviet.30.t
+	desc = coldwar_soviet.30.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Accept request
+		name = coldwar_soviet.30.a
+		remove_state_core = 77
+		add_popularity = {
+			ideology = communism
+			popularity = -0.15
+		}
+		ROM = {
+			country_event = {
+				id = coldwar_soviet.31
+				days = 3
+			}
+			transfer_state = 77
+			add_state_core = 77
+			add_popularity = {
+				ideology = communism
+			popularity = 0.05
+			}
+		}
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.31
+				days = 3
+			}
+		}
+	}
+	option = { #Refuse request
+		name = coldwar_soviet.30.b
+		SOV = {
+			country_event = {
+				id = coldwar_soviet.32
+				days = 3
+			}
+		}
+	}
+}
+
+#Bulgaria accepts
+country_event = {
+	id = coldwar_soviet.31
+	title = coldwar_soviet.31.t
+	desc = coldwar_soviet.31.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.31.a
+	}
+}
+
+#Bulgaria refuses
+country_event = {
+	id = coldwar_soviet.32
+	title = coldwar_soviet.32.t
+	desc = coldwar_soviet.32.d
+	picture = GFX_news_event_12
+	is_triggered_only = yes
+	option = {
+		name = coldwar_soviet.32.a
+	}
+}
