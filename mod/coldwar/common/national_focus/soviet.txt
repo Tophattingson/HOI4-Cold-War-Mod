@@ -18,9 +18,9 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 4
 		y = 0
-		cost = 10
+		cost = 5
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -740,9 +740,9 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 14
 		y = 0
-		cost = 10
+		cost = 5
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -1095,9 +1095,9 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 23
 		y = 0
-		cost = 10
+		cost = 5
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 50
 		}
 	}
 	focus = {
