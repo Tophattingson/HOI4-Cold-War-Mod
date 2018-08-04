@@ -130,6 +130,74 @@ ideas = {
 				war_support_factor = -0.2
 			}
 		}
+		great_patriotic_war_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_victors_of_ww1
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.4
+				war_support_factor = -0.16
+			}
+		}
+		great_patriotic_war_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_victors_of_ww1
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.3
+				war_support_factor = -0.12
+			}
+		}
+		great_patriotic_war_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_victors_of_ww1
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.2
+				war_support_factor = -0.08
+			}
+		}
+		great_patriotic_war_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_victors_of_ww1
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.1
+				war_support_factor = -0.04
+			}
+		}
 		fourth_plan_idea = {
 			allowed = {
 				always = no
