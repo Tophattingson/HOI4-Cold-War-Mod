@@ -936,3 +936,115 @@ news_event = {
 		name = coldwar_soviet.33.a
 	}
 }
+
+#Great Patriotic War effect decrease 1
+country_event = {
+	id = coldwar_soviet.34
+	title = coldwar_soviet.34.t
+	desc = coldwar_soviet.34.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1948.3.1
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = coldwar_soviet.34.a
+		swap_ideas = {
+			add_idea = great_patriotic_war_1
+			remove_idea = great_patriotic_war
+		}
+	}
+}
+
+#Great Patriotic War effect decrease 2
+country_event = {
+	id = coldwar_soviet.35
+	title = coldwar_soviet.34.t
+	desc = coldwar_soviet.34.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1949.6.1
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = coldwar_soviet.34.a
+		swap_ideas = {
+			add_idea = great_patriotic_war_2
+			remove_idea = great_patriotic_war_1
+		}
+	}
+}
+
+#Great Patriotic War effect decrease 3
+country_event = {
+	id = coldwar_soviet.36
+	title = coldwar_soviet.34.t
+	desc = coldwar_soviet.34.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1950.9.1
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = coldwar_soviet.34.a
+		swap_ideas = {
+			add_idea = great_patriotic_war_3
+			remove_idea = great_patriotic_war_2
+		}
+	}
+}
+
+#Great Patriotic War effect decrease 4
+country_event = {
+	id = coldwar_soviet.37
+	title = coldwar_soviet.34.t
+	desc = coldwar_soviet.34.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1951.12.1
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = coldwar_soviet.34.a
+		swap_ideas = {
+			add_idea = great_patriotic_war_4
+			remove_idea = great_patriotic_war_3
+		}
+	}
+}
+
+#Great Patriotic War effect decrease 5
+country_event = {
+	id = coldwar_soviet.37
+	title = coldwar_soviet.34.t
+	desc = coldwar_soviet.34.d
+	picture = GFX_news_event_12
+	fire_only_once = yes
+	trigger = {
+		tag = SOV
+		date > 1953.3.1
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = coldwar_soviet.34.a
+		remove_ideas = great_patriotic_war_4
+	}
+}
